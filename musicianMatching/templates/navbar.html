@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <title>Navbar</title>
+  <style>
+    #nav {
+  position:fixed; left:0; top:0;
+  width:100%; padding: 0;
+  z-index:1;
+}
+nav.navbar {
+  background-color:#222;
+    padding: 0 0 35px;
+
+}
+.navbar-nav {
+    position:absolute;
+    top:39px; right:25px;
+}
+
+.nav-item a {
+    color:#aaa;
+    font-size:19px;
+    padding:20px 10px;
+}
+#nav a:hover {
+  font-weight: bold;
+  color:#fff;
+}
+#nav a.router-link-exact-active {
+  color: #fff;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <div id="app">
+    <div id="nav">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"> <img src="../../LOGO1.JPG"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+   
+  </div>
+    <p v-if="bool1">
+      true
+    </p>
+    <p v-if="bool2">
+      false
+    </p>
+
+    <p v-if="str1">
+      'Yes'
+    </p>
+    <p v-if="str2">
+      ''
+    </p>
+
+    <p v-if="num1">
+      1
+    </p>
+    <p v-if="num2">
+      0
+    </p>
+
+    <p v-if="arr">
+      [] => js 는 빈배열이 true 평가
+    </p>
+
+    <p v-if="arr.length">
+      [].length 를 통해 0인지로 확인
+    </p>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: { 
+        bool1: true,
+        bool2: false,
+        str1: 'Yes',
+        str2: '',
+        num1: 1,
+        num2: 0,
+        arr: [],
+      }
+    })
+  </script>
+</body>
+</html>
