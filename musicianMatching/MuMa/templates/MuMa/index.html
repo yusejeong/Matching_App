@@ -1,1 +1,110 @@
-hello world
+<!DOCTYPE html> 
+
+<html> 
+    <head> 
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+        <script src="https://unpkg.com/vue"></script> <!-- vue 불러오기 -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" >
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
+        <title>MuMa</title> 
+    </head> 
+    <style>
+        @font-face{ font-family:ng; 
+            src:url(IropkeBatangM.eot); 
+        } 
+        body{
+            margin-top:20px;
+            text-align: center;
+            font-family: 'IropkeBatangM'
+        }
+    </style>
+    <body> 
+        <!-- 출처 : https://bootsnipp.com/snippets/9Avx -->
+        <!-- <img src="/static/img/LOGO3.jpg"> -->
+        <h3>찾고 싶은 공고를 검색해보세요!</h3>
+        <div class="container">
+            <div class="row">    
+                <div class="col-xs-8 col-xs-offset-2">
+                    <div class="input-group">
+                        <div class="input-group-btn search-panel">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                <span id="search_concept">악기</span> <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                              <li><a href="#contains">Contains</a></li>
+                              <li><a href="#its_equal">It's equal</a></li>
+                              <li><a href="#greather_than">Greather than ></a></li>
+                              <li><a href="#less_than">Less than < </a></li>
+                              <li class="divider"></li>
+                              <li><a href="#all">Anything</a></li>
+                            </ul>
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                <span id="search_concept">지역</span> <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                              <li><a href="#contains">Contains</a></li>
+                              <li><a href="#its_equal">It's equal</a></li>
+                              <li><a href="#greather_than">Greather than ></a></li>
+                              <li><a href="#less_than">Less than < </a></li>
+                              <li class="divider"></li>
+                              <li><a href="#all">Anything</a></li>
+                            </ul>
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                <span id="search_concept">날짜</span> <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                              <li><a href="#contains">Contains</a></li>
+                              <li><a href="#its_equal">It's equal</a></li>
+                              <li><a href="#greather_than">Greather than ></a></li>
+                              <li><a href="#less_than">Less than < </a></li>
+                              <li class="divider"></li>
+                              <li><a href="#all">Anything</a></li>
+                            </ul>
+                        </div>
+                        
+                        <input type="hidden" name="search_param" value="all" id="search_param">         
+                        <input type="text" class="form-control" name="x" placeholder="검색어를 입력해주세요.">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- <div id = 'app'>
+            <p>[[ title ]]</p> 
+            <ul> 
+                <li v-for="day in days">
+                    <h4> Day [[ day ]] to do list</h4>
+                </li> 
+            </ul>
+        </div> -->
+    </body>        
+
+</html>
+
+
+<script>
+    new Vue({
+        delimiters: ['[[', ']]'],
+        el: '#app',
+        data: {
+            title: 'Welcome My Schedule',
+            days: [1, 2, 3, 4, 5]
+        }
+    })
+
+    $(document).ready(function(e){
+        $('.search-panel .dropdown-menu').find('a').click(function(e) {
+            e.preventDefault();
+            var param = $(this).attr("href").replace("#","");
+            var concept = $(this).text();
+            $('.search-panel span#search_concept').text(concept);
+            $('.input-group #search_param').val(param);
+        });
+    });
+</script>
