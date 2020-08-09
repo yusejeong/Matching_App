@@ -11,3 +11,21 @@
     </form>
 
 {% endblock %}
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+
+    const app = new Vue({
+      el: '#app',
+      data: { 
+        
+      },
+      methods:{
+          signup(){
+              const baseURL = `https://localhost:8080/accounts/signup`
+              axios.post(`${baseURL}`)
+              .then((res)=>console.log(res))
+              .catch(err=>console.log(err))
+          }
+      }
+    })
+  </script>
