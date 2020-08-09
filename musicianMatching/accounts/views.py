@@ -1,6 +1,3 @@
-from django.shortcuts import render
-
-# Create your views here.
 from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib.auth import get_user_model
 from django.contrib.auth import login as auth_login
@@ -22,5 +19,10 @@ def signup(request):
         form=CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('MuMa:index')
-    return render(request,'MuMa/signup.html')
+            return redirect('accounts:index')
+    else:
+        form = CustomUserCreationForm()
+    context={
+        'form':form
+    }
+    return render(request,'accounts/signup.html')
