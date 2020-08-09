@@ -1,0 +1,199 @@
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <title>Navbar</title>
+  {% bootstrap_css %}
+  <style>
+    #nav {
+  position:fixed; left:0; top:0;
+  width:100%; padding: 0;
+  z-index:1;
+  
+}
+nav.navbar {
+  background-color:#000000;
+
+}
+.navbar-nav {
+    
+    display: flex !important;
+  align-items:center;
+
+    float:right !important;
+  
+}
+
+
+.nav-item a {
+    color:#ffffff;
+    font-size:19px;
+    padding:20px 10px;
+}
+#nav a:hover {
+  font-weight: bold;
+  color:#fff;
+}
+#nav a.router-link-exact-active {
+  color: #fff;
+}
+.searchform{
+  margin-top:50px;
+}
+
+
+
+
+  </style>
+</head>
+<body>
+
+  <div id="app">
+    <div id="nav">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+        <a class="navbar-brand" href="#"> <img src="../../LOGO1.JPG"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse justify-content-md-end" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-0 ">
+            <li class="nav-item">
+              <a class="nav-link fa fa-calendar-plus-o" href="#">행사 추가 <span class="sr-only">(current)</span></a>
+              
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link fa fa-calendar-check-o" href="#">일정 확인 </a>
+            </li>
+            <!-- {% if request.user.is_authenticated %} -->
+            <!-- <li class="nav-item"> -->
+              <!-- <a class="nav-link" href="{% url 'accounts:detail' request.user.id %}"> -->
+                <!-- {{ request.user.username }}님 -->
+              <!-- </a> -->
+            <!-- </li> -->
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="{% url 'accounts:logout' %}">로그아웃</a>
+            </li> -->
+        <!-- {% else %} -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">로그인</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">회원가입</a>
+            </li>
+        <!-- {% endif %} -->
+
+   
+          </ul>
+          
+        </div>
+      </nav>
+   
+  </div>
+  <div class="container">
+
+  
+  {% block body %}
+  {% endblock %}
+</div>
+  <center>
+  <img style="margin-top:200px;" src="../../LOGO3.JPG">
+  <form class="searchform">
+  
+  <select name='fruits'>
+    <option value='' selected>-- 지역 --</option>
+    <option value='Seoul'>서울</option>
+    <option value='Incheon'>인천</option>
+    <option value='Gyeonggi'>경기</option>
+    <option value='Busan'>부산</option>
+    <option value='Sejong'>세종</option>
+    <option value='Gwangju'>광주</option>
+    <option value='Ulsan'>울산</option>
+    <option value='Daegu'>대구</option>
+    <option value='Daejeon'>대전</option>
+    <option value='Gyeongnam'>경남</option>
+    <option value='Gyeongbuk'>경북</option>
+    <option value='Chungnam'>충남</option>
+    <option value='Chungbuk'>충북</option>
+    <option value='Jyeonnam'>전남</option>
+    <option value='Jyeonbuk'>전북</option>
+    <option value='Gangwon'>강원</option>
+    <option value='Jeju'>제주</option>
+  </select>
+  <select name='fruits'>
+    <option value='' selected>-- 악기 --</option>
+    <option value='Piano'>피아노</option>
+    <option value='Gayageum'>가야금</option>
+    <option value='Geomungo'>거문고</option>
+    <option value='Gunban'>건반</option>
+    <option value='Gukak'>국악</option>
+    <option value='Guitar'>기타</option>
+    <option value='Danso'>단소</option>
+    <option value='Daegeum'>대금</option>
+    <option value='DoubleBase'>더블베이스</option>
+    <option value='Drum'>드럼</option>
+    <option value='Recoder'>리코더</option>
+    <option value='Mandolin'>만돌린</option>
+    <option value='Musical'>뮤지컬</option>
+    <option value='Midi'>미디</option>
+    <option value='Basoon'>바순</option>
+    <option value='Violin'>바이올린</option>
+    <option value='Banju'>반주</option>
+    <option value='Vocal'>보컬</option>
+    <option value='BaseGuitar'>베이스기타</option>
+    <option value='Violla'>비올라</option>
+    <option value='Samul'>사물놀이</option>
+    <option value='Sexophone'>색소폰</option>
+    <option value='Seongak'>성악</option>
+    <option value='PracticalMusic'>실용음악</option>
+    <option value='Ajeng'>아쟁</option>
+    <option value='Arcodian'>아코디언</option>
+    <option value='Organ'>오르간</option>
+    <option value='Ovoe'>오보에</option>
+    <option value='Ocarina'>오카리나</option>
+    <option value='Uculelle'>우쿨렐레</option>
+    <option value='ElecGuitar'>일렉기타</option>
+    <option value='Jangu'>장구</option>
+    <option value='JazzPiano'>재즈피아노</option>
+    <option value='Conduct'>지휘</option>
+    <option value='Cello'>첼로</option>
+    <option value='ContraBase'>콘트라베이스</option>
+    <option value='Clarinet'>클라리넷</option>
+    <option value='Hit'>타악기</option>
+    <option value='TongGuitar'>통기타</option>
+    <option value='Trumbone'>트럼본</option>
+    <option value='Trumpet'>트럼펫</option>
+    <option value='Pansori'>판소리</option>
+    <option value='Flute'>플룻</option>
+    <option value='Harmonica'>하모니카</option>
+    <option value='Harf'>하프</option>
+    <option value='Horen'>호른</option>
+  </select>
+  <input type="date">
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form>
+  
+</center>
+    
+
+  </div>
+
+ 
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/b3df0f0c27.js" crossorigin="anonymous"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: { 
+        user:False,
+      }
+    })
+  </script>
+</body>
+</html>

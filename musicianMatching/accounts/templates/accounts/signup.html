@@ -1,0 +1,31 @@
+{% extends 'navbar2.html' %}
+
+{% load bootstrap4 %}
+{% block body %}
+<h2 class="text-center" style="margin-top:200px;">회원가입</h2>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <button class="btn btn-warning">회원가입</button>
+        <a href="{% url 'accounts:signin' %}">로그인</a>
+    </form>
+
+{% endblock %}
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+
+    const app = new Vue({
+      el: '#app',
+      data: { 
+        
+      },
+      methods:{
+          signup(){
+              const baseURL = `https://localhost:8080/accounts/signup`
+              axios.post(`${baseURL}`)
+              .then((res)=>console.log(res))
+              .catch(err=>console.log(err))
+          }
+      }
+    })
+  </script>
