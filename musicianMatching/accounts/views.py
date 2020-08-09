@@ -19,10 +19,10 @@ def signup(request):
         form=CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('accounts:index')
+            return redirect('MuMa:index')
     else:
         form = CustomUserCreationForm()
     context={
         'form':form
     }
-    return render(request,'accounts/signup.html')
+    return render(request,'accounts/signup.html',context)
